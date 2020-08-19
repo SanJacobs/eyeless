@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import filedialog
-import Jobs
+import jobs
 from PIL import Image, ImageTk
 
 HEIGHT = 600
@@ -20,7 +20,7 @@ def load_main_window(path):
     HEIGHT = 600
     WIDTH = 1200
 
-    frames = Jobs.load_sequence(path)
+    frames = jobs.load_sequence(path)
 
     rootWindow = tk.Tk()
 
@@ -238,7 +238,7 @@ def load_init_popup():
     centerer.grid(row=2, column=1, columnspan=4)
 
     def ok():
-        if not Jobs.redo_check(filePath.get()):
+        if not jobs.redo_check(filePath.get()):
             rootWindow.destroy()
 
     okButton = tk.Button(centerer, text="OK", command=ok).grid(column=0, row=0)
