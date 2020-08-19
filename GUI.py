@@ -196,8 +196,8 @@ def load_main_window(path):
     featherSlider.config(command=lambda x: slider_entry(featherSliderValue, featherEntryText))
     featherSlider.bind("<ButtonRelease-1>", lambda x: print("Re-rendering"))
 
-    # FIXME previewDisplay claims to be referenced before defined, despite being set up at the beginning of this definition.
-    # FIXME the image in previewDisplay isn't updating.
+    # FIXME: PreviewDisplay claims to be referenced before defined, despite being set up at the beginning of this definition.
+    # FIXME: The image in previewDisplay isn't updating.
     def update_preview(new_image_index):
         # previewImageImport = Image.open(frames[new_image_index]["file"])
         print("Loading " + str(frames[new_image_index]["file"]))
