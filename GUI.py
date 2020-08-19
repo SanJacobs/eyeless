@@ -177,6 +177,7 @@ def load_main_window(path):
     # Setting up functionality
     # Checkboxes and sliders
     # Defining the functions
+    # FIXME: These checkboxes don't check when testing on my desktop, but they do on my laptop
     def checkbox_toggle(checkbutton):
         print("Checkbox set to: "+str(checkbutton.get()))
 
