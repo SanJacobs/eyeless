@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 from PIL import Image, ImageDraw, ImageFilter
 import face_recognition
 import numpy.polynomial.polynomial as poly

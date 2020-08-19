@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 from process import eyeless_render
 from sjstools import affirmatrue
 import glob
