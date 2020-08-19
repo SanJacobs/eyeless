@@ -1,0 +1,6 @@
+media/
+__pycache__
+gif_convert
+process.py
+sjstools.py
+notes.txt
