@@ -8,15 +8,6 @@ from PIL import Image, ImageTk
 HEIGHT = 600
 WIDTH = 1200
 
-# Setting the colors
-mainColor = "#202020"
-darkColor = "#1b1b1b"
-accentColor = "#00d0ff"
-placeholderColor = "#ff00ff"
-
-buttonTextColor = "white"
-grayedTextColor = "#303030"
-
 def load_main_window(path):
 
     HEIGHT = 600
@@ -141,21 +132,12 @@ def load_main_window(path):
     # Master changes
 
     for child in settingsCanvas.winfo_children():
-        child.config(
-            #highlightthickness=0,
-        )
         try:
-            child.config(
-                # activebackground=child.cget("bg"),
-                justify="center",
-                # troughcolor=mainColor
-            )
+            child.config(justify="center")
         except:
             None
         if "scale" in str(child):
-            child.config(
-                length=250
-            )
+            child.config(length=250)
             # print("Set value of "+str(child))
 
 
