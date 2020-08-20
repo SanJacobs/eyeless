@@ -28,13 +28,11 @@ def load_main_window(path):
 
     previewFrame = tk.Frame(rootWindow)
     previewFrame.place(relwidth=0.7, relheight=0.95)
-    previewDisplay = tk.Label(previewFrame)
-    previewDisplay.pack(fill="both")
 
     previewImageImport = Image.open(frames[0]["file"])
     previewImage = ImageTk.PhotoImage(previewImageImport)
-    # previewDisplay = tk.Label(previewFrame, image=previewImage)
-    # previewDisplay.pack(fill="both", side="left")
+    previewDisplay = tk.Label(previewFrame, image=previewImage)
+    previewDisplay.pack(fill="both", side="left")
 
     playheadFrame = tk.Frame(rootWindow)
     playheadFrame.place(rely=0.95, relwidth=0.7, relheight=0.05)
@@ -199,14 +197,15 @@ def load_main_window(path):
     featherSlider.bind("<ButtonRelease-1>", lambda x: print("Re-rendering"))
 
     # FIXME: PreviewDisplay claims to be referenced before defined, despite being set up at the beginning of this definition.
-    # FIXME: The image in previewDisplay isn't updating.
+    # FIXME: The image in previewDisplay isn't showing at all
     def update_preview(new_image_index):
-        # previewImageImport = Image.open(frames[new_image_index]["file"])
+        previewImageImport = Image.open(frames[new_image_index]["file"])
         print("Loading " + str(frames[new_image_index]["file"]))
         previewImage = ImageTk.PhotoImage(previewImageImport)
-        previewDisplay.pack_forget()
-        previewDisplay = tk.Label(previewFrame, image=previewImage)
-        previewDisplay.pack(fill="both", side="left")
+        #previewDisplay.pack_forget()
+        #previewDisplay = tk.Label(previewFrame, image=previewImage)
+        #previewDisplay.pack(fill="both", side="left")
+        previewDisplay.config(image=previewImage)
 
     frameSlider.config(command=lambda x: update_preview(int(frameSlider.get())-1))
     frameSlider.bind("<ButtonRelease-1>", lambda x: print("Re-rendering"))
