@@ -178,12 +178,13 @@ def load_main_window(path):
     featherSlider.config(command=lambda x: slider_entry(featherSliderValue, featherEntryText))
     featherSlider.bind("<ButtonRelease-1>", lambda x: print("Re-rendering"))
 
-    # FIXME: previewImage is not updating when scrolling
+    # FIXME: previewImage is not updating when scrolling, the display just disappears
+    # Using the PhotoImage instance is needed to avoid a "_tkinter.TclError"
     def update_preview(new_image_index):
         previewImageImport = Image.open(frames[new_image_index]["file"])
         print("Loading " + str(frames[new_image_index]["file"]))
         previewImage = ImageTk.PhotoImage(previewImageImport)
-        previewDisplay.config(image=previewImageImport)
+        previewDisplay.config(image=previewImage)
 
     frameSlider.config(command=lambda x: update_preview(int(frameSlider.get())-1))
     frameSlider.bind("<ButtonRelease-1>", lambda x: print("Re-rendering"))
