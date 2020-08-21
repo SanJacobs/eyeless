@@ -178,16 +178,12 @@ def load_main_window(path):
     featherSlider.config(command=lambda x: slider_entry(featherSliderValue, featherEntryText))
     featherSlider.bind("<ButtonRelease-1>", lambda x: print("Re-rendering"))
 
-    # FIXME: PreviewDisplay claims to be referenced before defined, despite being set up at the beginning of this definition.
-    # FIXME: The image in previewDisplay isn't showing at all
+    # FIXME: previewImage is not updating when scrolling
     def update_preview(new_image_index):
         previewImageImport = Image.open(frames[new_image_index]["file"])
         print("Loading " + str(frames[new_image_index]["file"]))
         previewImage = ImageTk.PhotoImage(previewImageImport)
-        #previewDisplay.pack_forget()
-        #previewDisplay = tk.Label(previewFrame, image=previewImage)
-        #previewDisplay.pack(fill="both", side="left")
-        previewDisplay.config(image=previewImage)
+        previewDisplay.config(image=previewImageImport)
 
     frameSlider.config(command=lambda x: update_preview(int(frameSlider.get())-1))
     frameSlider.bind("<ButtonRelease-1>", lambda x: print("Re-rendering"))
