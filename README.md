@@ -1,5 +1,6 @@
 # Eyeless
-A tool for replacing eyes in image sequences
+A tool that tracks people's eyes to replace them with any image or image sequence.
+The GUI version is currently under development, but the command-line prototype is functional.
 
 ## Usage
 
