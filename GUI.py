@@ -179,6 +179,7 @@ def load_main_window(path):
     featherSlider.bind("<ButtonRelease-1>", lambda x: print("Re-rendering"))
 
     # FIXME: previewImage is not updating when scrolling, the display just disappears
+    # TODO: Try using a Canvas to display the preview instead of a Label
     # Using the PhotoImage instance is needed to avoid a "_tkinter.TclError"
     def update_preview(new_image_index):
         previewImageImport = Image.open(frames[new_image_index]["file"])
