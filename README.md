@@ -2,6 +2,13 @@
 A tool that tracks people's eyes to replace them with any image or image sequence.
 The GUI version remains undeveloped due to the absolute state of tkinter, but the command-line tool is functional.
 
+## Prerequisites
+
+ + dlib
+ + face-recognition
+ + PIL
+ + (For GUI) tk
+
 ## Usage
 
 ### 0. Find a video
