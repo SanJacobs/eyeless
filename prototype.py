@@ -1,8 +1,15 @@
 #!/usr/bin/env python3
 
 from process import eyeless_render
-from sjstools import affirmatrue
 import glob
+try:
+    from sjstools import affirmatrue
+except ImportError:
+    def affirmatrue(input_string):
+        if "y" in input_string or "Y" in input_string:
+            return True
+        else:
+            return False
 
 # Counting frames
 
