@@ -43,5 +43,3 @@ A good animation contains:
  - Reflected lights in eyes
  - Simple readable shape
 
-
-# # TODO Write the rest of the README.
