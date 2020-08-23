@@ -1,6 +1,6 @@
 # Eyeless
 A tool that tracks people's eyes to replace them with any image or image sequence.
-The GUI version is currently under development, but the command-line prototype is functional.
+The GUI version remains undeveloped due to the absolute state of tkinter, but the command-line tool is functional.
 
 ## Usage
 
