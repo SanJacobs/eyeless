@@ -12,6 +12,7 @@ except ImportError:
             return False
 
 # Counting frames
+# TODO: Read input arguments, so the folder and file names can be more flexible
 
 face_frames = len(glob.glob1("media/face_input", "frame*.*"))
 print("Counted "+str(face_frames)+" frames.")
