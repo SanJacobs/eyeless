@@ -2,6 +2,9 @@
 
 from process import eyeless_render
 import glob
+import sys
+from os import path
+
 try:
     from sjstools import affirmatrue
 except ImportError:
@@ -11,9 +14,30 @@ except ImportError:
         else:
             return False
 
-# Counting frames
-# TODO: Read input arguments, so the folder and file names can be more flexible
+# Input argument format: eyeless.py face_input_dir render_output_dir eye_input_dir right_eye_input_dir
+#                             0           1                2               3               4
+# Reading input arguments
+if len(sys.argv) = 4:
+    print("Reading input-folder argument...")
+    input_folder = sys.argv[1]
+    print(input_folder)
+    
+    print("Reading output-folder argument...")
+    output_folder = sys.argv[2]
+    print(output_folder)
+    
+    print("Reading eye-directory...")
+    left_eye_directory = sys.argv[3]
+    right_eye_directory = sys.argv[3]
+    
+if len(sys.argv) = 5:
+    print("Reading right eye directory...")
+    right_eye_directory = sys.argv[3]
 
+# TODO: Check if input arguments are true
+# TODO: Request input directories if none provided with arguments
+
+# Counting frames
 face_frames = len(glob.glob1("media/face_input", "frame*.*"))
 print("Counted "+str(face_frames)+" frames.")
 eye_frames = len(glob.glob1("media/eye_input", "frame*.*"))
