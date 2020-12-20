@@ -14,9 +14,10 @@ except ImportError:
         else:
             return False
 
-# Input argument format: eyeless.py face_input_dir render_output_dir eye_input_dir right_eye_input_dir
+input_argument_format = "eyeless.py face_input_dir render_output_dir (left)eye_input_dir (right_eye_input_dir)"
 #                             0           1                2               3               4
 # Reading input arguments
+
 if len(sys.argv) = 4:
     print("Reading input-folder argument...")
     input_folder = sys.argv[1]
@@ -33,6 +34,11 @@ if len(sys.argv) = 4:
 if len(sys.argv) = 5:
     print("Reading right eye directory...")
     right_eye_directory = sys.argv[3]
+
+if len(sys.argv) > 5 or (len(sys.argv) < 4 and len(sys.argv) > 1):
+    print("Wrong amount of input arguments!")
+    print("Proper format:")
+    print(input_argument_format)
 
 # TODO: Check if input arguments are true
 # TODO: Request input directories if none provided with arguments
