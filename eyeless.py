@@ -15,7 +15,6 @@ except ImportError:
             return False
 
 input_argument_format = "eyeless.py face_input_dir render_output_dir (left)eye_input_dir (right_eye_input_dir)"
-#                             0           1                2               3               4
 # Reading input arguments
 
 if len(sys.argv) = 4:
