@@ -17,30 +17,45 @@ except ImportError:
 input_argument_format = "eyeless.py face_input_dir render_output_dir (left)eye_input_dir (right_eye_input_dir)"
 # Reading input arguments
 
-if len(sys.argv) = 4:
+if len(sys.argv) == 4 or len(sys.argv) == 5:
     print("Reading input-folder argument...")
-    input_folder = sys.argv[1]
-    print(input_folder)
+    input_directory = sys.argv[1]
+    print(input_directory)
     
     print("Reading output-folder argument...")
-    output_folder = sys.argv[2]
-    print(output_folder)
+    output_directory = sys.argv[2]
+    print(output_directory)
     
     print("Reading eye-directory...")
     left_eye_directory = sys.argv[3]
     right_eye_directory = sys.argv[3]
     
-if len(sys.argv) = 5:
+if len(sys.argv) == 5:
     print("Reading right eye directory...")
     right_eye_directory = sys.argv[3]
 
-if len(sys.argv) > 5 or (len(sys.argv) < 4 and len(sys.argv) > 1):
+elif len(sys.argv) > 5 or (len(sys.argv) < 4 and len(sys.argv) > 1):
     print("Wrong amount of input arguments!")
     print("Proper format:")
     print(input_argument_format)
 
+else:
+    print("Input filepaths.")
+    print("Where is the folder containing the frames of the face?")
+    input_directory = input()
+    print("")
+    
+    print("Where is the folder containing the eye animation?")
+    left_eye_directory = input()
+    right_eye_directory = left_eye_directory
+    print("")
+    
+    print("Where do you want the finished files to go?")
+    output_directory = input()
+    print("")
+
 # TODO: Check if input arguments are true
-# TODO: Request input directories if none provided with arguments
+# TODO: Separate left and right eye graphics
 
 # Counting frames
 face_frames = len(glob.glob1("media/face_input", "frame*.*"))
