@@ -5,14 +5,11 @@ import glob
 import sys
 from os import path
 
-try:
-    from sjstools import affirmatrue
-except ImportError:
-    def affirmatrue(input_string):
-        if "y" in input_string or "Y" in input_string:
-            return True
-        else:
-            return False
+def affirmatrue(input_string):
+    if "y" in input_string.lower():
+        return True
+    else:
+        return False
 
 input_argument_format = "eyeless.py face_input_dir render_output_dir (left)eye_input_dir (right_eye_input_dir)"
 # Reading input arguments
