@@ -12,13 +12,14 @@ def affirmatrue(input_string):
         return False
 
 input_argument_format = "eyeless.py face_input_dir render_output_dir (left)eye_input_dir (right_eye_input_dir)"
-# Reading input arguments
 
 properly_argumented = False
 input_directory = ""
 left_eye_directory = ""
 right_eye_directory = ""
 output_directory = ""
+
+# Reading input arguments
 
 if len(sys.argv) == 4 or len(sys.argv) == 5:
     
@@ -44,7 +45,6 @@ elif len(sys.argv) > 5 or (len(sys.argv) < 4 and len(sys.argv) > 1):
     print(input_argument_format)
     sys.exit()
 
-
 # Runtime path input and verification
 while not path.isdir(input_directory):
     print("Input filepaths.")
@@ -63,6 +63,7 @@ while not path.isdir(output_directory):
     output_directory = input()
     print("")
 
+# TODO: Make it file name agnostic
 # TODO: Separate left and right eye graphics
 
 # Counting frames
