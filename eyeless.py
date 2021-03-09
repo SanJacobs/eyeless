@@ -106,6 +106,7 @@ reverse_animation = affirmatrue(input("Do you want to reverse the eye animation?
 print("Great.")
 
 # Rendering
+# TODO: Only print text on NEW line when error occured, otherwise, overwrite previous line
 
 print("\nRendering all frames...")
 for every_frame in frames:
