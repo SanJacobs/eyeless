@@ -15,9 +15,12 @@ input_argument_format = "eyeless.py face_input_dir render_output_dir (left)eye_i
 # Reading input arguments
 
 properly_argumented = False
+input_directory = ""
+left_eye_directory = ""
+right_eye_directory = ""
+output_directory = ""
 
 if len(sys.argv) == 4 or len(sys.argv) == 5:
-    properly_argumented = True
     
     print("Reading input-folder argument...")
     input_directory = sys.argv[1]
@@ -39,27 +42,27 @@ elif len(sys.argv) > 5 or (len(sys.argv) < 4 and len(sys.argv) > 1):
     print("Wrong amount of input arguments!")
     print("Proper format:")
     print(input_argument_format)
+    sys.exit()
 
-while not properly_argumented:
-    input_directory = ""
-    
-    while not os.path.isdir(input_directory):
-        print("Input filepaths.")
-        print("Where is the folder containing the frames of the face?")
-        input_directory = input()
-        print("")
-    
+
+# Runtime path input and verification
+while not path.isdir(input_directory):
+    print("Input filepaths.")
+    print("Where is the folder containing the frames of the face?")
+    input_directory = input()
+    print("")
+
+while not path.isdir(left_eye_directory):
     print("Where is the folder containing the eye animation?")
     left_eye_directory = input()
     right_eye_directory = left_eye_directory
     print("")
-    
+
+while not path.isdir(output_directory):
     print("Where do you want the finished files to go?")
     output_directory = input()
     print("")
-    
 
-# TODO: Check if input arguments are true
 # TODO: Separate left and right eye graphics
 
 # Counting frames
