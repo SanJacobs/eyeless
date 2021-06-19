@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-# NOTE: Doesn't work right now, see line 111
+# NOTE: Doesn't work right now, see line 113
 
 # TODO: Make it file name agnostic
 # TODO: Just overwrite the previous line during rendering unless something went wrong
