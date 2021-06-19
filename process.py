@@ -11,15 +11,14 @@ import numpy as np
 # pad_percent = 0.3
 # mask_feather = 1
 
+# TODO: Temporarily rotate eyes to be level during regression fit to fix 45-degree restriction
 
-def eyeless_render(__frame, __framenr, __testing, subdiv_res, regr_mode, pad_percent, mask_feather):
+def eyeless_render(__frame, eye_frame_number, __testing, subdiv_res, regr_mode, pad_percent, mask_feather):
     #print("Loading "+__frame+"...")
-    input_image = face_recognition.load_image_file("media/face_input/"+__frame)
+    input_image = face_recognition.load_image_file(__frame)
 
     #print("Reading face...")
     face_landmark_list = face_recognition.face_landmarks(input_image)
-
-
 
     # Setting up coordinate splits for each eye's coordinates
     # Naming convention: Left/right, X/Y, top/bottom.
@@ -132,7 +131,8 @@ def eyeless_render(__frame, __framenr, __testing, subdiv_res, regr_mode, pad_per
 
 
     #print("Loading eye graphic...")
-    new_eye = Image.open(str("media/eye_input/frame" + str("%0*d" % (3, __framenr)) + ".png"), "r")
+    new_eye = Image.open(str("media/eye_input/frame" + str("%0*d" % (3, eye_frame_number)) + ".png"), "r")
+    #FIXME: Stupid way to load shit. Just use current frame nr, modulo, count of eyeframes
 
     #print("Fitting graphic to left eye...")
     # Setting up left eye imagery
@@ -180,4 +180,4 @@ def eyeless_render(__frame, __framenr, __testing, subdiv_res, regr_mode, pad_per
     if __testing:
         face_image.show()
     else:
-        face_image.save(str("media/face_output/"+str(__frame)), format="PNG")
+        face_image.save(str("media/face_output/out"+str(eye_frame_number)), format="PNG")
