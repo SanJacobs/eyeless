@@ -64,7 +64,12 @@ while not path.isdir(output_directory):
     print("")
 
 # TODO: Make it file name agnostic
+# TODO: Just overwrite the previous line during rendering unless something went wrong
+# TODO: Progress bar
+# TODO: Ask if untracked frames should be skipped or go unrendered
+# TODO: Duplicate file handling
 # TODO: Separate left and right eye graphics
+# TODO: [Wishful] Graph amount of change between frames for the user to be able to catch any glitched frames
 
 # Counting frames
 face_frames = len(glob.glob1("media/face_input", "frame*.*"))
